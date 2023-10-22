@@ -7,7 +7,9 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="QuickSend.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="QuickSend">
+        Title="QuickSend"
+        MinWidth="990"
+        MinHeight="500">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>

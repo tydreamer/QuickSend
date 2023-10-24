@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Media;
 using QuickSend.UtilityCollection;
 
-namespace QuickSend.Resources;
+namespace QuickSend.ResourcesNamespace;
 
 public static partial class Resources
 {

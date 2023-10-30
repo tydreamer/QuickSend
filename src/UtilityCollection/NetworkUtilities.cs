@@ -8,7 +8,7 @@ using QuickSend.Models;
 
 namespace QuickSend.UtilityCollection;
 
-internal static partial class Utilities
+public static partial class Utilities
 {
     internal static List<User> UsersList { get; set; } = new();
     

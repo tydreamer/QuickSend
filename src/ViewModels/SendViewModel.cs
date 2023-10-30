@@ -2,7 +2,7 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using Avalonia.Media;
-using QuickSend.Models;
+using QuickSend.Models.NetworkTransmission;
 using QuickSend.ResourcesNamespace;
 using QuickSend.ViewModels.Dialogs;
 using ReactiveUI;

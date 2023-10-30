@@ -1,4 +1,5 @@
 using QuickSend.Models;
+using QuickSend.Models.NetworkTransmission;
 
 namespace QuickSend.ViewModels;
 

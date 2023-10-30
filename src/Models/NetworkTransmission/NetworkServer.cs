@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuickSend.Models;
+namespace QuickSend.Models.NetworkTransmission;
 
 internal class NetworkServer : NetworkObject
 {

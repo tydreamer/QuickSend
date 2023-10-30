@@ -1,6 +1,6 @@
 using System.Net;
 
-namespace QuickSend.Models;
+namespace QuickSend.Models.NetworkTransmission;
 
 internal abstract class NetworkObject
 {

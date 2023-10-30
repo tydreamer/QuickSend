@@ -1,14 +1,20 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using QuickSend.Exceptions;
+using QuickSend.Models;
 
 namespace QuickSend.UtilityCollection;
 
-public static partial class Utilities
+internal static partial class Utilities
 {
-    public static async Task<IPAddress> GetIpAddressAsync()
+    internal static List<User> UsersList { get; set; } = new();
+    
+    internal static User? LocalUser { get; set; }
+    
+    internal static async Task<IPAddress> GetIpAddressAsync()
     {
         IPAddress[] ipAddresses = await Dns.GetHostAddressesAsync(Dns.GetHostName());
         IPAddress? finalIp;

@@ -1,5 +1,4 @@
 using System.Collections.ObjectModel;
-using System.Linq;
 using QuickSend.Models;
 using QuickSend.Models.NetworkTransmission;
 using QuickSend.UtilityCollection;
@@ -25,7 +24,7 @@ public sealed class ReceiveViewModel : NetworkViewModelBase
     {
         Messages.Add(e);
         Utilities.Log($"\nRECEIVED MESSAGE:");
-        Utilities.Log($"From: {UsersList?.FirstOrDefault(x => x.UniqueGuid == e.SenderGuid)?.Nickname}");
+        Utilities.Log($"From: {e.Sender?.Nickname}");
         Utilities.Log($"Message: {e.TextMessage}\n");
     }
 }

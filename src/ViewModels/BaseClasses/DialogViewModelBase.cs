@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Avalonia.Media;
 using QuickSend.Extensions;
+using QuickSend.Interfaces;
 
 namespace QuickSend.ViewModels;
 

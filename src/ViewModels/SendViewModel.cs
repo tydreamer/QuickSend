@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Avalonia.Media;
 using QuickSend.Exceptions;
+using QuickSend.Interfaces;
 using QuickSend.Models.NetworkTransmission;
 using QuickSend.ResourcesNamespace;
 using QuickSend.UtilityCollection;

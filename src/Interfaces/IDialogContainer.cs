@@ -1,6 +1,6 @@
 using QuickSend.ViewModels;
 
-namespace QuickSend;
+namespace QuickSend.Interfaces;
 
 public interface IDialogContainer
 {

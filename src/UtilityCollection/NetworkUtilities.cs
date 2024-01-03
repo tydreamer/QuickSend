@@ -8,9 +8,9 @@ using QuickSend.Models;
 
 namespace QuickSend.UtilityCollection;
 
-public static partial class Utilities
+internal static partial class Utilities
 {
-    public static ObservableCollection<User>? UsersList { get; set; }
+    internal static ObservableCollection<User>? UsersList { get; set; }
     
     internal static User? LocalUser { get; set; }
     

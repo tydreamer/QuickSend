@@ -1,7 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
-using QuickSend.Models;
 using QuickSend.ViewModels;
 
 namespace QuickSend.Views;

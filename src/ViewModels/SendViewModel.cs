@@ -12,7 +12,6 @@ using QuickSend.Models.NetworkTransmission;
 using QuickSend.ResourcesNamespace;
 using QuickSend.UtilityCollection;
 using QuickSend.ViewModels.Dialogs;
-using QuickSend.Views;
 using ReactiveUI;
 
 namespace QuickSend.ViewModels;
@@ -161,15 +160,7 @@ public sealed class SendViewModel : NetworkViewModelBase, IDialogContainer
 
     private async Task BrowseFiles()
     {
-        if (MainWindow.Instance is not { } mainWindow)
-            return;
-        
-        var fileDialog = new OpenFileDialog
-        {
-            AllowMultiple = true, Title = "Select one or multiple files"
-        };
-        
-        string[]? result = await fileDialog.ShowAsync(mainWindow);
+        string[]? result = await Utilities.InvokeOpenFileDialog("Select one or multiple files", true);
         if (result is null)
             return;
         

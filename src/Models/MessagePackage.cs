@@ -1,20 +1,15 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reactive;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Avalonia.Controls;
-using Avalonia.Media;
 using QuickSend.DateFormatterUtility;
 using QuickSend.Events;
 using QuickSend.Extensions;
 using QuickSend.Interfaces;
-using QuickSend.ResourcesNamespace;
 using QuickSend.UtilityCollection;
 using QuickSend.ViewModels;
-using QuickSend.ViewModels.Dialogs;
-using QuickSend.Views;
 using ReactiveUI;
 
 namespace QuickSend.Models;
@@ -95,7 +90,7 @@ internal sealed class MessagePackage : INotifyPropertyChangedHelper
     internal bool HasText => TextMessage is { Length: > 0 }; // TextMessage != null && `TextMessage.Length > 0`
     internal bool HasFiles => Files.Length > 0;
 
-    public void NotifyPropertyChanged(string propertyName = "")
+    public void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     private async Task DownloadZip()

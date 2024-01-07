@@ -9,7 +9,6 @@ using QuickSend.Events;
 using QuickSend.Extensions;
 using QuickSend.Interfaces;
 using QuickSend.UtilityCollection;
-using QuickSend.ViewModels;
 using ReactiveUI;
 
 namespace QuickSend.Models;
@@ -29,15 +28,13 @@ internal sealed class MessagePackage : INotifyPropertyChangedHelper
 
     private bool _isRead;
     private string _formattedTimeString = null!;
-    private readonly ReceiveViewModel? _receiveViewModel;
 
-    internal MessagePackage(DateTime time, User? sender, ReceiveViewModel viewModel, FileObject[] files, string? textMessage = null)
+    internal MessagePackage(DateTime time, User? sender, FileObject[] files, string? textMessage = null)
     {
         this.Files = files;
         this.TextMessage = textMessage;
         this.Time = time;
         this.Sender = sender;
-        _receiveViewModel = viewModel;
 
         if (files.Length > 0)
         {
@@ -52,8 +49,8 @@ internal sealed class MessagePackage : INotifyPropertyChangedHelper
         DownloadToFolderCommand = ReactiveCommand.Create(DownloadToFolder);
     }
 
-    internal MessagePackage(MessageReceivedEventArgs args, ReceiveViewModel viewModel) 
-        : this(args.Time, args.Sender, viewModel, args.Files, args.TextMessage)
+    internal MessagePackage(MessageReceivedEventArgs args) 
+        : this(args.Time, args.Sender, args.Files, args.TextMessage)
     { }
     
     internal FileObject[] Files { get; }

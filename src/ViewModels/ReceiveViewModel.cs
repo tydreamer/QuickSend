@@ -5,7 +5,6 @@ using QuickSend.Interfaces;
 using QuickSend.Models;
 using QuickSend.Models.NetworkTransmission;
 using QuickSend.ResourcesNamespace;
-using QuickSend.UtilityCollection;
 using QuickSend.ViewModels.Dialogs;
 using ReactiveUI;
 
@@ -33,7 +32,7 @@ public sealed class ReceiveViewModel : NetworkViewModelBase, IDialogContainer
         set => this.RaiseAndSetIfChanged(ref _messageViewModel, value);
     }
     
-    public ReceiveViewModel() : base(Utilities.UsersList)
+    public ReceiveViewModel() : base(ApplicationVariables.MetaData.UsersList)
     {
         Server = new NetworkServer();
         Server.MessageReceived += OnMessageReceived;

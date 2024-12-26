@@ -6,11 +6,13 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using Avalonia.Controls.Notifications;
 using QuickSend.Enums;
 using QuickSend.Events;
 using QuickSend.Exceptions;
 using QuickSend.Services;
 using QuickSend.UtilityCollection;
+using QuickSend.ViewModels;
 
 namespace QuickSend.Models.NetworkTransmission;
 
@@ -230,6 +232,10 @@ internal class NetworkServer : NetworkObject
                     User senderUser = new User(senderID, decryptedUsername!, Utilities.GetRandomUserColor().ToUint32(), ApplicationVariables.MetaData!.LocalUser!.ID, false);
                     ApplicationVariables.MetaData.UsersAddedMeList.Add(senderUser);
                     DataManager.SaveData(ApplicationVariables.MetaData, Utilities.MetaDataPath);
+                    
+                    string title = $"{decryptedUsername} added you!";
+                    string message = $"{decryptedUsername} added you as a new contact.";
+                    MainWindowViewModel.ShowNotification(title, message, NotificationType.Information, TimeSpan.FromSeconds(3));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
